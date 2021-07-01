@@ -13,13 +13,13 @@ class IndexView(generic.ListView):
 class CreateView(generic.edit.CreateView):
     template_name = 'greetings/create.html'
     model = Greeting
-    fields = ['message']
+    fields = ['message', 'related_greetings']
     success_url = reverse_lazy('greetings:index') # more robust than hardcoding to /greetings/; directs user to index view after creating a greeting
 
 class UpdateView(generic.edit.UpdateView):
     template_name = 'greetings/update.html'
     model = Greeting
-    fields = ['message']
+    fields = ['message', 'related_greetings']
     success_url = reverse_lazy('greetings:index')
 
 class DeleteView(generic.edit.DeleteView):
